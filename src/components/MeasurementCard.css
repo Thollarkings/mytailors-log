@@ -1,0 +1,72 @@
+.measurement-card {
+    background: linear-gradient(to bottom, #875c96, #f7f5f8, #895b90, #f4f3f4);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px;
+    margin-bottom: 5%;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.695);
+    width: 95%;
+}
+
+.measurement-card h3 {
+    margin-bottom:20px ;
+    color: #000000;
+    font-size: 1.5rem;
+    
+  }
+  
+  .measurement-card p {
+    margin: 5px 0;
+    font-weight: bold;
+  }
+
+  button {
+    padding: 10px 15px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 10px;
+    background:linear-gradient( rgb(62, 92, 147), rgb(43, 2, 52), rgb(62, 92, 147));
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    justify-content: center;
+  }
+  
+ 
+  .client-label {
+    color: rgb(0, 0, 0); /* Change to your desired color */
+}
+
+.client-name {
+    color: rgb(1, 73, 1); /* Change to your desired color */
+}
+
+.phone-label {
+    color: rgb(0, 0, 0); /* Change to your desired color */
+}
+
+.phone-number {
+    color: rgb(128, 0, 28); /* Change to your desired color */
+}
+  
+  @media (max-width: 784px) {
+    input[type="text"],
+    input[type="number"],
+    button {
+        width: 85%;
+    }
+  
+    .content {
+      display: block;
+    
+    }
+
+    .measurement-card {
+        background: linear-gradient(to bottom, #875c96, #f7f5f8, #895b90, #f4f3f4);
+        border-radius: 10px;
+        padding: 15px;
+        margin: 15px;
+        box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.695);
+        width: 85%;
+    }
+  }
