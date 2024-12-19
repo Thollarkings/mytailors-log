@@ -52,20 +52,15 @@
     input[type="text"],
     input[type="number"],
     button {
-        width: 85%;
+    width: 85%;
     }
   
-    .content {
-      display: block;
-    
-    }
-
     .measurement-card {
-        background: linear-gradient(to bottom, #875c96, #f7f5f8, #895b90, #f4f3f4);
-        border-radius: 10px;
-        padding: 15px;
-        box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.695);
-        width: 95%;
-        
-    }
+      background: linear-gradient(to bottom, #875c96, #f7f5f8, #895b90, #f4f3f4);
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.695);
+      width: 94%; /* Adjust width to fit nicely within the panel */
+      max-width: 600px; /* Ensure it doesn't get too wide */
+  }
   }

@@ -145,24 +145,18 @@ form button  {
   width: 100%;
   }
 
-  .content {
-  display: block;
-  
-  }
-
 
   .right-panel {
-    flex: 2; /* Grow more than left panel */
-    background: linear-gradient(135deg, 
-    #590d5a, 
-    #b892a9, 
-    #b675aa);
+    
+    background: linear-gradient(135deg, #590d5a, #b892a9, #b675aa);
     border-radius: 20px; 
     margin-top: 4%;
-    padding-left: 5%;
-    padding-right: 5%;
-    max-width: 90%;
-  }
+    max-width: 100%;
+    padding: 4%;
+    display: block; /* Enable flexbox */
+    justify-content: center; /* Horizontally center the box */
+    align-items: center; /* Vertically center the box (optional) */
+}
 
   .search {
     margin-bottom: 20px;
@@ -183,6 +177,7 @@ form button  {
   display: block;
   max-width: 100%;
   margin-top: 20px;
+  width: 100%;
   
 }
   
