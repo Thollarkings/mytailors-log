@@ -1,7 +1,7 @@
 import React from 'react';
 import MeasurementCard from './MeasurementCard';
 
-const MeasurementsList = ({ measurements, onDelete, setEditingIndex }) => {
+const MeasurementsList = ({ measurements, onDelete, handleEdit }) => {
     return (
         <div>
             {measurements.map((measurement, index) => (
@@ -10,7 +10,7 @@ const MeasurementsList = ({ measurements, onDelete, setEditingIndex }) => {
                     measurement={measurement}
                     index={index}
                     onDelete={onDelete}
-                    setEditingIndex={setEditingIndex}
+                    handleEdit={handleEdit} // Pass handleEdit to MeasurementCard
                 />
             ))}
         </div>

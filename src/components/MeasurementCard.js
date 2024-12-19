@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './MeasurementCard.css';
 
-const MeasurementCard = ({ measurement, index, onDelete, setEditingIndex }) => {
+const MeasurementCard = ({ measurement, index, onDelete, handleEdit }) => {
     const [detailsVisible, setDetailsVisible] = useState(false);
 
     // Define measurement fields with labels and keys
@@ -29,19 +29,23 @@ const MeasurementCard = ({ measurement, index, onDelete, setEditingIndex }) => {
         { label: 'Calf', key: 'calf' },
         { label: 'Ankle', key: 'ankle' },
         { label: 'Inside Leg Seam', key: 'insideLegSeam' },
+        { label: 'Additional Comments', key: 'comments' },
     ];
+
+    // Format timestamp to readable format
+    const formattedTimestamp = new Date(measurement.timestamp).toLocaleString();
 
     return (
         <div className='measurement-card'>
             <h3>
-        <span className='client-label'>Client:  </span> 
-        <span className='client-name'>{measurement.name}</span>
-    </h3>
-    <p>
-        <span className='phone-label'>Phone:      </span> 
-        <span className='phone-number'>{measurement.phone}</span>
-    </p>
-            <p>Recorded: {measurement.timestamp}</p>
+                <span className='client-label'>Client: </span>
+                <span className='client-name'>{measurement.name}</span>
+            </h3>
+            <p>
+                <span className='phone-label'>Phone: </span>
+                <span className='phone-number'>{measurement.phone || 'N/A'}</span>
+            </p>
+            <p>Recorded: {formattedTimestamp}</p>
 
             <button onClick={() => setDetailsVisible(prev => !prev)}>
                 {detailsVisible ? 'Hide Measurement Details' : 'Show Measurement Details'}
@@ -66,9 +70,9 @@ const MeasurementCard = ({ measurement, index, onDelete, setEditingIndex }) => {
                 </table>
             )}
 
-            <div>
-                <button onClick={() => setEditingIndex(index)}>Edit</button>
-                <button onClick={() => onDelete(index)}>Delete</button>
+            <div className='action-buttons'>
+                <button className='edit-button' onClick={() => handleEdit(index)}>Edit</button>
+                <button className='delete-button' onClick={() => onDelete(index)}>Delete</button>
             </div>
         </div>
     );
