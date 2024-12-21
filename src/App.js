@@ -51,6 +51,41 @@ const App = () => {
         setFormVisible(true); // Make the form visible when editing
     };
 
+    const handleExportAll = () => {
+        const dataStr = `data:text/json;charset=utf-8,${encodeURIComponent(JSON.stringify(measurements, null, 2))}`;
+        const downloadAnchor = document.createElement('a');
+        downloadAnchor.setAttribute('href', dataStr);
+        downloadAnchor.setAttribute('download', 'measurements.json');
+        document.body.appendChild(downloadAnchor);
+        downloadAnchor.click();
+        document.body.removeChild(downloadAnchor);
+    };
+
+    const handleImportAll = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const importedData = JSON.parse(e.target.result);
+                    if (Array.isArray(importedData)) {
+                        const mergedData = [...measurements, ...importedData];
+                        const uniqueData = mergedData.filter((item, index, self) =>
+                            index === self.findIndex((t) => t.timestamp === item.timestamp)
+                        );
+                        localStorage.setItem('clientMeasurements', JSON.stringify(uniqueData));
+                        setMeasurements(uniqueData);
+                    } else {
+                        alert('Invalid JSON file. Please ensure it contains an array of measurements.');
+                    }
+                } catch (error) {
+                    alert('Invalid JSON file. Please check the file content.');
+                }
+            };
+            reader.readAsText(file);
+        }
+    };
+
     const filteredMeasurements = measurements.filter(measurement =>
         measurement.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -81,6 +116,22 @@ const App = () => {
                 </div>
                 <div className='right-panel'>
                     <h1>Measurement Tracker</h1>
+                    <div className='export-import-buttons'>
+    <button className='export-button' onClick={handleExportAll}>Export All</button>
+    <button 
+        className='import-button' 
+        onClick={() => document.getElementById('file-input').click()}
+    >
+        Import All
+    </button>
+    <input 
+        type='file' 
+        id='file-input' 
+        accept='.json' 
+        onChange={handleImportAll} 
+        style={{ display: 'none' }} 
+    />
+</div>
                     <MeasurementsList 
                         measurements={filteredMeasurements} 
                         onDelete={handleDelete} 
