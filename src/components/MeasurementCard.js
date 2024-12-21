@@ -36,7 +36,7 @@ const MeasurementCard = ({ measurement, index, onDelete, handleEdit }) => {
     // Format timestamp to readable format
     const timestamp = dayjs(measurement.timestamp);
     const formattedTimestamp = timestamp.isValid() 
-      ? timestamp.format('dddd, MMMM D, YYYY - h:mm:ss A') 
+      ? timestamp.format('dddd, MMM. D, YYYY - h:mm:ss A') 
       : 'Invalid Date';
     console.log(formattedTimestamp);
 
