@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './MeasurementCard.css';
+import dayjs from 'dayjs';
 
 const MeasurementCard = ({ measurement, index, onDelete, handleEdit }) => {
     const [detailsVisible, setDetailsVisible] = useState(false);
@@ -33,7 +34,11 @@ const MeasurementCard = ({ measurement, index, onDelete, handleEdit }) => {
     ];
 
     // Format timestamp to readable format
-    const formattedTimestamp = new Date(measurement.timestamp).toLocaleString();
+    const timestamp = dayjs(measurement.timestamp);
+    const formattedTimestamp = timestamp.isValid() 
+      ? timestamp.format('dddd, MMMM D, YYYY - h:mm:ss A') 
+      : 'Invalid Date';
+    console.log(formattedTimestamp);
 
     return (
         <div className='measurement-card'>
@@ -43,7 +48,7 @@ const MeasurementCard = ({ measurement, index, onDelete, handleEdit }) => {
             </h3>
             <p>
                 <span className='phone-label'>Phone: </span>
-                <span className='phone-number'>{measurement.phone || 'N/A'}</span>
+                <span className='phone-number'>{measurement.phone }</span>
             </p>
             <p>Recorded: {formattedTimestamp}</p>
 
@@ -63,7 +68,7 @@ const MeasurementCard = ({ measurement, index, onDelete, handleEdit }) => {
                         {measurementFields.map(field => (
                             <tr key={field.key}>
                                 <td>{field.label}:</td>
-                                <td>{measurement[field.key] || 'N/A'}</td>
+                                <td>{measurement[field.key] || '-'}</td>
                             </tr>
                         ))}
                     </tbody>

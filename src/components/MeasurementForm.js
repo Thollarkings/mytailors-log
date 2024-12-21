@@ -37,15 +37,18 @@ const MeasurementForm = ({ onSave, editingIndex, setEditingIndex }) => {
         />
         
         <label htmlFor="phone">Client's Phone Number *</label>
-        <input
-          type="number"
-          id="phone"
-          name="phone"
-          value={formData.phone || ''}
-          onChange={handleChange}
-          placeholder="XXX XXX XXXX"
-          required
-        />
+<input
+  type="text"  // Use type="text" instead of type="number"
+  id="phone"
+  name="phone"
+  value={formData.phone || ''}
+  onChange={handleChange}
+  placeholder="XXX XXX XXXX"
+  pattern="[\+]?[\d\- ]+"  // Regex to allow digits, space, plus (+) or hyphen (-)
+  title="Phone number with optional +, - or spaces"
+  required
+/>
+
 
         <label htmlFor="head">Head</label>
         <input
