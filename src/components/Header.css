@@ -1,0 +1,18 @@
+.header h1 {
+    text-align: center;
+    color: rgb(227, 233, 171);
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.header p {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-shadow: 0 0 5px black;
+    font-size: 20px;
+}
+
+@media (max-width: 784px) {
+
+}

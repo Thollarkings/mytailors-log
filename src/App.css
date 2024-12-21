@@ -1,0 +1,181 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: linear-gradient(#430844, #9881a5);
+
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  max-width: 80%;
+  margin-top: 20px;
+  gap: 10%;
+}
+
+.left-panel {
+  flex: 1; /* Grow to fill space */
+  padding: 20px;
+  background: #f9f9f9; /* Optional: background color */
+  border-radius: 20px;
+  background: #b675aa;
+  
+}
+
+.right-panel {
+  flex: 2; /* Grow more than left panel */
+  padding: 2%;
+  background: #b675aa;
+  border-radius: 20px; 
+}
+
+.search {
+  margin-bottom: 20px;
+}
+
+.button1 {
+ color: #ffffff;
+ display: block;
+ margin-bottom: 20px;
+}
+
+.main .search {
+  display: block;
+  color: #555;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+
+/* Measurement Card styles */
+
+
+
+/* Form styles */
+form {
+  background: rgb(206, 206, 206);
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.808);
+}
+
+form label  {
+  display: block;
+  margin: 10px 0 0;
+  color: #000000;
+  font-weight: bold;
+}
+
+form #comments  {
+  display: block;
+  margin: 10px 0 5px;
+  color: #555;
+  width: 97%;
+  border-radius: 10px;
+  height: 70px;
+}
+
+form button  {
+  display: block;
+  margin-left: 9%;
+  margin-top: 10%;
+  width: 80%;
+  
+ 
+}
+
+.measurement-card table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.measurement-card table td {
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.measurement-card table th {
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  font-size: 20px;
+  color: #99002e;
+}
+
+
+
+/* Responsive styles */
+@media (max-width: 784px) {
+  input[type="text"],
+  input[type="number"],
+  button {
+  width: 100%;
+  }
+
+
+  .right-panel {
+    
+    background: linear-gradient(45deg, #590d5a, #b892a9, #b675aa);
+    border-radius: 20px; 
+    margin-top: 4%;
+    max-width: 100%;
+    padding: 4%;
+    display: block; /* Enable flexbox */
+    justify-content: center; /* Horizontally center the box */
+    align-items: center; /* Vertically center the box (optional) */
+}
+
+  .search {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.content {
+  display: block;
+  max-width: 100%;
+  margin-top: 20px;
+  width: 100%;
+ }
+
+h1 {
+  text-align: center;
+  color: #000000;
+}
+
+  
+
+
+}
