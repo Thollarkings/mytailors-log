@@ -1,14 +1,9 @@
 /* General styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
   margin: 0;
   padding: 20px;
-  background: linear-gradient(135deg, 
-#430844, 
-#9881a5, 
-#620351) 
-
+  background: linear-gradient(#430844, #9881a5);
 
 }
 
@@ -37,20 +32,14 @@ h1 {
   padding: 20px;
   background: #f9f9f9; /* Optional: background color */
   border-radius: 20px;
-  background: linear-gradient(135deg, 
-  #590d5a, 
-  #b892a9, 
-  #b675aa) 
+  background: #b675aa;
   
 }
 
 .right-panel {
   flex: 2; /* Grow more than left panel */
   padding: 2%;
-  background: linear-gradient(135deg, 
-  #590d5a, 
-  #b892a9, 
-  #b675aa) ;
+  background: #b675aa;
   border-radius: 20px; 
 }
 
