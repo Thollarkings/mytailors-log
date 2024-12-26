@@ -140,8 +140,10 @@ const App = () => {
                     />
                 </div>
             </div>
+             <footer id="footer"><h5>&copy; Thollarkings 2024</h5></footer>
         </div>
     );
+    
 };
 
 export default App;

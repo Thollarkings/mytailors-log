@@ -125,6 +125,26 @@ form button  {
   color: #99002e;
 }
 
+  #footer {
+    position: fixed;
+    bottom: 95%; /* Keep it at the bottom */
+    width: 98%; /* Adjust width accordingly */
+    left: 50%;
+    height: 11%;
+    transform: rotate(-90deg); /* Rotate text 90 degrees */
+    background-color: rgba(43, 0, 39, 0);
+    color: rgb(255, 255, 255);
+    margin-bottom: 30px;
+   
+  }
+  
+  #footer h5 {
+  font-size: 1.2em;
+  text-align: left;
+  
+    
+  }
+
 
 
 /* Responsive styles */
@@ -174,6 +194,44 @@ h1 {
   text-align: center;
   color: #000000;
 }
+
+#footer {
+  position: fixed;
+  bottom: 95%; /* Keep it at the bottom */
+  width: 98%; /* Adjust width accordingly */
+  left: 50%;
+  height: 11%;
+  transform: rotate(-90deg); /* Rotate text 90 degrees */
+  background-color: rgba(43, 0, 39, 0);
+  color: rgb(255, 255, 255);
+  margin-bottom: 30px;
+ 
+}
+
+#footer h5 {
+font-size: 1.2em;
+text-align: left;
+ 
+}
+
+#footer {
+  position: fixed;
+  bottom: 20%; /* Keep it at the bottom */
+  width: 98%; /* Adjust width accordingly */
+  left: 49%;
+  height: 11%;
+  transform: rotate(-90deg); /* Rotate text 90 degrees */
+  background-color: rgba(43, 0, 39, 0);
+  color: rgb(255, 255, 255);
+  margin-bottom: 30px;
+  text-shadow:0 0 5px #000000;
+  font-size: 1em;
+ 
+}
+
+
+
+
 
   
 
